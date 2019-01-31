@@ -1,4 +1,4 @@
-# my portfolio app
+# PORTFOLIO
 
 # Node.js | Express | React | Google-Maps-React | jQuery | Moment.js | Mongoose | MongoDB | Styled Components | Babel | Webpack
 
