@@ -30,14 +30,14 @@ export default class GitHubFetcher extends React.Component {
 
   render () {
     return (<div>
-      <h1 id="title">Github Fetcher</h1>
+      <h1 id="title" style={{paddingLeft: "5px"}}>Github Fetcher</h1>
       <Search onSearch={this.search.bind(this)}/>
       <div className="table-responsive-sm">
         <table className="table table-sm">
           <thead className="thead">
           <tr>
             <th scope="col"></th>
-            <th scope="col" style={{width: "12em"}}>github handle</th>
+            <th scope="col" style={{width: "7em"}}>user name</th>
             <th scope="col">repo name</th>
             <th scope="col">repo description</th>
             <th scope="col" style={{width: "7em"}}>fork count</th>

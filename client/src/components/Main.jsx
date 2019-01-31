@@ -4,9 +4,17 @@ import styled from 'styled-components';
 import NavBar from './NavBar.jsx';
 import Map from './Map/components/Main.jsx';
 import GitHubFetcher from './GitHubFetcher/index.jsx';
+import Resume from './Resume.jsx';
+import Contact from './Contact.jsx';
+import TechStack from './TechStack.jsx';
 
 const AppBox = styled.div`
-  padding: 10% 10% 10% 10%;
+  position: absolute; 
+  width: 80%;
+  height: 80%;
+  border: solid 1px #D9E8DD;
+  margin: 10% 10% 10% 10%;
+  overflow: auto;
 `;
 
 export default class Main extends React.Component {
@@ -14,12 +22,8 @@ export default class Main extends React.Component {
     super(props);
 
     this.state = {
-      view: 'about'
+      view: ''
     };
-  }
-
-  componentDidMount() {
-
   }
 
   changeView = (option) => {
@@ -31,17 +35,26 @@ export default class Main extends React.Component {
   renderView = () => {
     const {view} = this.state;
 
-    // if (view === 'about') {
-    //   return <About/>
-    // }
     if (view === 'app1') {
-      return <Map/>
+      return <Map />
     }
     if (view === 'app2') {
       return <GitHubFetcher/>
     }
     if (view === 'app3') {
       return <App3/>
+    }
+    if (view === 'tech') {
+      return <TechStack/>
+    }
+    if (view === 'resume') {
+      return <Resume/>
+    }
+    if (view === 'contact') {
+      return <Contact/>
+    }
+    if (view === 'profile') {
+      return <Profile/>
     }
 
   };

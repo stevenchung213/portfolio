@@ -46,39 +46,47 @@ export class MapContainer extends React.Component {
   render () {
 
     const style = {
-      width: '79.4%',
-      height: '79.4%',
+      width: '100%',
+      height: '100%'
+    };
+
+    const mapBox = {
+      position: 'absolute',
+      width: "100%",
+      height: '68%'
     };
 
     return (
-      <Map
-        google={this.props.google}
-        xs = {12}
-        zoom ={5}
-        style={style}
-        onClick={this.onMapClicked}
-      >
-        {this.props.pins.map((marker, i) => {
-          return (
-            <Marker
-              key={i}
-              onClick={this.onMarkerClick}
-              // title={marker.title}
-              name={marker.note}
-              position={marker.position}
-            />
-          )
-        })}
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onInfoWindowClose}
+      <div id="mapBox" style={mapBox}>
+        <Map
+          google={this.props.google}
+          xs={12}
+          zoom={5}
+          style={style}
+          onClick={this.onMapClicked}
         >
-          <div>
-            <h6>{this.state.selectedPlace.name}</h6>
-          </div>
-        </InfoWindow>
-      </Map>
+          {this.props.pins.map((marker, i) => {
+            return (
+              <Marker
+                key={i}
+                onClick={this.onMarkerClick}
+                // title={marker.title}
+                name={marker.note}
+                position={marker.position}
+              />
+            )
+          })}
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onInfoWindowClose}
+          >
+            <div>
+              <h6>{this.state.selectedPlace.name}</h6>
+            </div>
+          </InfoWindow>
+        </Map>
+      </div>
     );
   }
 }

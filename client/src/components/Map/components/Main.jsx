@@ -112,15 +112,15 @@ export default class Map extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="input-container" style={{paddingLeft:10}}>
+        <div className="input-container">
           <div className="note">
             <form onSubmit={this.handleSubmit}>
-              <label style={{width:250}}>
-                <input className="inputs" id="name-input" type="text" name="note" placeholder={'enter a label for the pin'} onChange={this.handleChange} style={{width:250, borderRadius:3}} />
+              <label style={{width:280, marginBottom:0}}>
+                <input className="inputs" id="name-input" type="text" name="note" placeholder={'enter a label for the pin'} onChange={this.handleChange} style={{width:280, borderRadius:3}} />
               </label>
-              <label style={{paddingLeft:10, width:250}}>
+              <label style={{paddingLeft:10, width:280, marginBottom:0}}>
                 <input className="inputs" id="coordinates-input" type="text" name="coordinates" placeholder={'enter coordinates EX: 34.05' +
-                ' -118.2'}onChange={this.handleChange} style={{width:250, borderRadius:3}} />
+                ' -118.2'} onChange={this.handleChange} style={{width:280, borderRadius:3}} />
               </label>
               <input type="submit" value="submit" style={{marginLeft:20, borderRadius:3}}/>
               <a href="https://latitude.to/" target="_blank" style={{paddingLeft:10, fontSize:18}}>get coordinates</a>

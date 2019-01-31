@@ -1,5 +1,16 @@
 import React from 'react';
 
+const rowHeight = {
+  height: '30px',
+  padding: '1px 1px 1px 1px !important'
+};
+
+const tableStyle = {
+  overflow: 'auto',
+  height: '184px'
+};
+
+
 export default class Pins extends React.Component {
   constructor(props) {
     super(props);
@@ -20,8 +31,8 @@ export default class Pins extends React.Component {
   render() {
     if (this.props.pins.length > 0) {
       return (
-        <React.Fragment>
-          <table className="table">
+        <div style={tableStyle}>
+          <table className="table table-sm">
             <thead className="thead">
               <tr>
                 <th scope="col">#</th>
@@ -68,7 +79,7 @@ export default class Pins extends React.Component {
             })}
             </tbody>
           </table>
-        </React.Fragment>
+        </div>
       )
     } else {
       return (
